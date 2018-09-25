@@ -1,4 +1,4 @@
-YOUR NAME and YOUR NETID
+Elena Gray and eg141
 
 Run WordGramDiver for wordgrams of size 2-10 and record
 the number of WordGram values/objects that occur more than
@@ -15,25 +15,43 @@ values of WSIZE
 WSIZE    # duplicates
 2        60,453
 3        10,756
-4
-5
-7
-8
-9
-10
+4		 1,987
+5		 663
+6		 362
+7		 226
+8		 151
+9		 105
+10		 73
 
 =====
 Explain in your own words the conceptual differences between 
-the benchmark and benchmarkShift methods. 
+the benchmark and benchmarkShift methods.
+ 
 Answer these questions: 
 
 (1) Why the results of these methods should be the same in 
 terms of changes made to the HashSet parameter.
 
+When the HashSet parameter the results in the two methods are the same because
+both result in a set of word grams from that given file of the given size, 
+even though they carry out the process of finding these word grams differently. 
+
 (2) What are the conceptual differences between the two
-benchmarking methods
+benchmarking methods.
+
+The benchmark method takes all the words of a file and iterates through
+creating new word grams of the specified size as it iterates. While, 
+the benchmark shift method is only looking at size amount of words 
+of the file at  any given time and using the shift method to look through 
+the rest of the words and create word grams of the specified size.  
 
 (3) Is the total amount of memory allocated for arrays
 the same or different in the two methods? Account for
 arrays created in the methods and arrays created by
 WordGram objects. Try to be quantitative in answering.
+
+Benchmark starts with the whole file stored in a list then converts that 
+to an array list. This means the array will be taking up memory for the 
+number of words in the file. While benchmarkShift is only ever storing an array 
+of whatever size is given, which takes significantly less memory than
+the benchmark method.
